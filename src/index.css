@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   box-sizing: border-box;
   font-family: 'Lato', sans-serif, helvetica;
 }
@@ -16,4 +16,6 @@
   --text-primary: #533e29;
   --text-secondary: #F9F7F4;
   --text-quaternary: #F5F1EE;
+
+  --text-md: 1rem;
 }
