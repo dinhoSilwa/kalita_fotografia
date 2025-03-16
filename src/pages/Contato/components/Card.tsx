@@ -1,12 +1,18 @@
 
+interface cardProps {
+  img: string,
+  alt: string,
+  titulo: string,
+  textButton: string,
+}
 
-
-const Card = () => {
+//Componente de cards
+const Card = ({img, alt="", titulo="", textButton=""}: cardProps ) => {
   return (
     <article>
-      <img src="" alt="" />
-      <h2></h2>
-      <button>Entrar em contato</button>
+      <img src={img} alt={alt} />
+      <h2>{titulo}</h2>
+      <button>{textButton}</button>
     </article>
   )
 }
