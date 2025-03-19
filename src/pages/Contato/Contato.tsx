@@ -25,7 +25,7 @@ const Contato = () => {
         </div>
       </div>
 
-      <div className="w-[1440px] flex justify-evenly items-center z-10">
+      <div className="w-[1440px] flex justify-center items-center space-x-8 z-10">
           <Card img={ImgWhatsapp} alt="Logo do Whatsapp" href="https://wa.me/5562994469142?text=Olá%20Kalita,%20quero%20agendar%20uma%20sessão" titulo="Whatsapp" textButton="Entrar em contato"/>
           <Card img={ImgGmail} alt="Logo do Gmail" href="mailto:kalitagoncalves@gmail.com" titulo="E-mail" textButton="Entrar em contato"/>
           <Card img={ImgInstagram} alt="Logo do Instagram" href="https://www.instagram.com/kalitafotografias/#" titulo="Instagram" textButton="Entrar em contato"/>
