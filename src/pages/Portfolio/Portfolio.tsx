@@ -1,40 +1,40 @@
 import { Link } from "react-router-dom";
 
-import newborn from "../../assets/newborn.png";
-import pregnant from "../../assets/pregnant.png";
-import wedding from "../../assets/wedding.png";
-import christmas from "../../assets/christmas.png";
+import newborn from "../../assets/newborn.webp";
+import pregnant from "../../assets/pregnant_.webp";
+import wedding from "../../assets/wedding_.webp";
+import christmas from "../../assets/christmas.webp";
 
 // Lista de cards do portfólio com imagens, textos e margens personalizadas
 
 const portfolioItems = [
   {
-    title: "nascimentos",
-    image: newborn,
-    alt: "Foto de um par de sapatinhos de recém-nascido",
-    path: "#",
-    marginTop: "mt-[120px]",
-  },
-  {
     title: "gestantes",
     image: pregnant,
     alt: "Foto de uma mulher grávida em ensaio fotográfico",
     path: "#",
-    marginTop: "mt-[68px]",
+    marginTop: "mt-[120px]",
+  },
+  {
+    title: "nascimentos",
+    image: newborn,
+    alt: "Foto de um par de sapatinhos de recém-nascido",
+    path: "#",
+    marginTop: "xl:mt-[68px] mt-[40px]",
   },
   {
     title: "ensaios em casa",
     image: wedding,
     alt: "Foto de um parto",
     path: "#",
-    marginTop: "mt-[120px]",
+    marginTop: "xl:mt-[120px] mt-[40px]",
   },
   {
     title: "natal",
     image: christmas,
     alt: "Foto temática de Natal",
     path: "#",
-    marginTop: "mt-[68px]",
+    marginTop: "xl:mt-[68px] mt-[40px] xl:mb-0 m-5",
   },
 ];
 
@@ -58,32 +58,43 @@ const Portfolio = () => {
     />
     <meta property="og:image" content="URL_DA_IMAGEM_DESTAQUE" />
     <meta property="og:url" content="URL_DA_PAGINA" />
-    <main className="font-homeKalita bg-quaternary flex justify-center flex-col items-center">
-      <section className="relative flex flex-col justify-start items-center h-[170px]">
+
+    <main className="font-homeKalita bg-quaternary flex justify-center flex-col items-center h-full">
+      <section className="relative flex flex-col justify-start items-center xl:h-[170px] h-0 xl:mb-0 mb-10">
         <h1 className="z-10 text-6xl font-light text-primary mt-10">Portfolio</h1>
-        <div className="absolute z-0 w-[422px] h-[45px] bg-fundo mt-11" />
+        <div className="hidden xl:flex none absolute z-0 w-[422px] h-[45px] bg-fundo mt-11" />
       </section>
 
-      <section className="relative w-full h-[863px] flex justify-center items-center">
-        <div className="w-7xl h-full flex justify-center gap-7.5 items-start z-30">
+      <section className="relative w-full xl:h-[863px] h-full mb-10 flex justify-center items-center">
+        <div className="w-full xl:w-7xl h-full flex xl:flex-row flex-col justify-center xl:items-start items-center gap-7.5 z-30">
           {portfolioItems.map((item, index) => (
             <article
               key={index}
-              className={`flex relative bg-quaternary w-[264px] h-[500px] ${item.marginTop}`}
+              className={`flex relative bg-quaternary w-[264px] xl:h-[500px] h-[550px] ${item.marginTop}`}
             >
               <div className="absolute top-[-18px] w-full flex justify-evenly items-center">
-                <div className="w-[34px] h-[2px] bg-primary" />
-                <p className="text-3xl text-primary">{item.title}</p>
+                {/* Adiciona estilos diferentes ao traço e ao título com base no índice do card */}
+                <div 
+                  className={`xl:w-[34px] lg:w-[34px] w-[17px] h-[2px] bg-primary ${
+                    index === 0 ? "xl:mr-0 mr-[305px] xl:static absolute " : index === 1 ? "xl:ml-[0px] ml-[35px] xl:static absolute " : index === 2 ? "xl:mr-0 mr-[305px] xl:static absolute " : index === 3 ? "xl:ml-[0px] ml-[180px] xl:static absolute" : "" } `} 
+                />
+                <p
+                  className={`text-3xl text-primary ${
+                    index === 0 ? "xl:mr-0 mr-[155px]" : index === 1 ? "xl:ml-0 ml-[175px]" : index === 2 ? "xl:mr-0 mr-[65px]" : index === 3 ? "xl:ml-0 ml-[245px]" : ""
+                  }`}
+                >
+                  {item.title}
+                </p>
               </div>
               <figure>
                 <img
-                  className="absolute top-0 mt-[43px] ml-[30px]"
+                  className="absolute top-0 xl:mt-[43px] mt-6 xl:ml-[30px] ml-0"
                   src={item.image}
                   alt={item.alt}
                   />
               </figure>
               <Link
-                className="absolute flex justify-center items-center text-center w-[134px] h-[34px] text-2xl text-primary font-light bg-fundo bottom-[-76px] right-[-55px] pt-1 z-10"
+                className="absolute flex justify-center items-center text-center w-[134px] h-[34px] text-2xl text-primary font-light bg-fundo xl:bottom-[-76px] bottom-[-5px] xl:right-[-55px] right-[66px] pt-1 z-10"
                 to={item.path}
                 >
                 Ver fotos
@@ -91,7 +102,7 @@ const Portfolio = () => {
             </article>
           ))}
         </div>
-        <div className="absolute w-full h-[526px] top-0 bg-fundo" />
+        <div className="hidden xl:flex absolute w-full h-[526px] top-0 bg-fundo" />
       </section>
     </main>
   </>
