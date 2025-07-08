@@ -35,7 +35,7 @@ export function Nav(){
                     className="fixed top-28 inset-0 bg-black/40 z-40"
                     onClick={toggleMenu}
                 >
-                  <nav className="absolute right-0 bg-quaternary h-svh w-1/2">
+                  <section className= "absolute right-0 bg-quaternary h-svh w-1/2 animate-openMenu">
                    <ul className="uppercase flex flex-col items-center justify-center gap-8 pt-8">
                       <Link to="/portfolio">
                         <li className="text-md text-primary font-bold hover:cursor-pointer hover:text-secondary transform transition duration-300">Portfólio</li>
@@ -50,7 +50,7 @@ export function Nav(){
                         <li className="text-md text-primary font-bold hover:cursor-pointer hover:text-secondary transform transition duration-300">Contato</li>
                       </Link>
                   </ul>
-                  </nav>
+                  </section>
                 </div>
             )}
         </nav>
