@@ -10,16 +10,16 @@ interface PortfolioCardProps {
 const PortfolioCard = ({ title, image, alt, path, }: PortfolioCardProps) => {
   return (
     <article
-      className={`flex relative xl:bg-quaternary bg-transparent w-[264px] xl:h-[500px] h-[550px] nth-[odd]:mt-15 mt-20 mb-14`}
+      className={`xl:flex flex-shrink-0 relative xl:bg-quaternary bg-transparent xl:w-[264px] w-[264px] xl:h-[500px] h-[500px] xl:nth-[even]:-mt-[-20px] xl:mt-18 mt-5 xl:mb-14 mb-0`}
     >
-      <div className="absolute xl:top-[-18px] top-[-11px] w-full flex xl:justify-evenly justify-center items-center xl:gap-0 gap-4">
-        <div className="xl:w-[34px] lg:w-[34px] w-[17px] h-[2px] bg-primary" />
-        <p className="text-3xl text-primary">{title}</p>
+      <div className="absolute xl:top-[-18px] top-[-17px] xl:w-full w-[264px] flex xl:justify-evenly justify-center items-center xl:gap-0 gap-4">
+        <div className="xl:flex hidden xl:w-[34px] lg:w-[34px] w-[17px] h-[2px] bg-primary" />
+        <p className="xl:text-3xl text-4xl text-primary">{title}</p>
       </div>
 
-      <figure>
+      <figure className="w-full">
         <img
-          className="absolute top-8 xl:mt-[9px] mt-0 xl:ml-[30px] ml-8"
+          className="w-full xl:h-[550px] h-[458px] absolute top-8 xl:mt-[9px] mt-0 xl:ml-[30px] ml-0 object-cover"
           src={image}
           alt={alt}
         />
@@ -27,11 +27,13 @@ const PortfolioCard = ({ title, image, alt, path, }: PortfolioCardProps) => {
 
       <Link
         className="absolute flex justify-center items-center text-center w-[134px] h-[34px] text-2xl text-primary font-light bg-fundo 
-        xl:bottom-[-76px] bottom-[-20px] xl:right-[-55px] right-[35px] pt-1 z-10"
+        bottom-[25px] left-1/2 -translate-x-1/2 
+        xl:bottom-[-76px] xl:right-[-55px] xl:left-auto xl:translate-x-0 pt-1 z-10"
         to={path}
       >
         Ver fotos
       </Link>
+      
     </article>
   );
 };
