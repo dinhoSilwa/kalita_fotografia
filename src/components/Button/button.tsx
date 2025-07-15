@@ -12,7 +12,7 @@ export function Button({ children, variant = 'primary', size = 'desktop', path}:
     const defaultVariant = 'h-[42px] py-3 px-6 rounded-[48px] flex items-center justify-center text-md font-lato font-bold cursor-pointer  transform transition duration-300' 
     const variantPrimary = variant === 'primary' && 'bg-fundo text-primary hover:bg-secondary hover:text-tertiary'
     const variantSecondary = variant === 'secondary' && 'bg-secondary text-tertiary hover:bg-[#886a49]'
-    const variantSize = size === 'mobile' && 'w-full'
+    const variantSize = size === 'mobile' && 'w-full h-[50px]'
 
     const buttonStyles = `${defaultVariant} ${variantPrimary} ${variantSecondary} ${variantSize}`
     return (
