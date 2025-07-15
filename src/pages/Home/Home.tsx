@@ -31,12 +31,7 @@ const Home = () => {
     <section className="w-full h-svh bg-quaternary">
 
       {/* Mobile */}
-      <div className='mt-28 px-2 sm:hidden flex flex-col'>
-        <Button text='Ver Portfólio' isMobile />
-        <Button text='Entre em Contato' isMobile />
-      </div>
-
-
+    
       {/* Desktop */}
       <div className="max-w-[1440px] p-4 hidden sm:flex justify-center items-center m-auto mt-28">
         <div className="w-[413px] h-[120px] mt-20 flex flex-col gap-6 space-y-5 justify-center items-center relative">
@@ -46,7 +41,7 @@ const Home = () => {
           <div className='absolute bottom-5 left-[170px]'>
               <img src={underline} alt="Underline"/>
           </div>
-          <Button text='Ver Portfólio' />
+          <Button path='/portfolio'>Ver Portfólio</Button>
         </div>
       </div>
       <div className='max-w-[1340px] xl:max-w-[1440px] m-auto mt-10 p-2 hidden sm:flex bg-quaternary gap-4 '>
