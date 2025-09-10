@@ -19,17 +19,32 @@ export function Nav() {
   return (
     <nav className="absolute right-6">
       {/* Botão */}
-      <button onClick={toggleMenu} className="sm:hidden block z-50 relative">
-        {isOpen ? (
-          <p className="font-homeKalita text-xl">X</p>
-        ) : (
-          <img src={line} alt="icone para menu"  className="w-12"/>
-        )}
+     
+      <button
+        onClick={toggleMenu}
+        className="sm:hidden z-50 relative w-8 h-8 flex items-center justify-center"
+      >
+        {/* Ícone hamburguer */}
+        <img
+          src={line}
+          alt="icone para menu"
+          className={`absolute transition-all duration-500 ease-in-out
+            ${isOpen ? "opacity-0 scale-75 rotate-90" : "opacity-100 scale-100 rotate-0"}`}
+        />
+
+        {/* Ícone X */}
+        <p
+          className={`absolute font-homeKalita text-2xl transition-all duration-500 ease-in-out
+            ${isOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-90"}`}
+        >
+          X
+        </p>
       </button>
 
       {/* Overlay (fundo escuro) */}
       <div
         onClick={toggleMenu}
+
         className={`fixed top-28 left-0 w-full h-full bg-black/40 z-40 transition-opacity duration-500 sm:hidden
         ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
       ></div>
