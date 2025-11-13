@@ -15,7 +15,7 @@ import { useState } from "react";
 import type { ContactMessage } from "../entities/contact-message";
 
 export default function ContactForm() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [, setIsModalOpen] = useState<boolean>(false);
   const { handleSubmit, errors, control } = useFormValidation(ContactSchema);
   const { mutate, isPending, isSuccess, isError } = useContactMutation();
 
@@ -33,6 +33,7 @@ export default function ContactForm() {
 
   return (
     <form className="w-full" onSubmit={handleSubmit(onsubmit)}>
+      {isError && <span>Messagem de erro no envio</span>}
       <section className="flex flex-col gap-8">
         <Input
           name="full_name"
@@ -77,7 +78,11 @@ export default function ContactForm() {
           type="submit"
         >
           <span className="font-nunito font-normal text-kalita-bg-light text-lg">
-            Enviar
+            
+
+            {
+              isPending ? "Carregando..." : "Enviar"
+            }
           </span>
         </button>
 

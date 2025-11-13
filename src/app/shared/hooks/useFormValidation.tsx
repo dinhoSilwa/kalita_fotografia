@@ -1,16 +1,23 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { type ZodTypeAny, z } from "zod/v3";
+import type { ContactSchema, ContactSchemaType } from "../schemas/contactSchema";
 
-export const useFormValidation = (schema: any) => {
-  // por enquanto deixei any para evitar conflitos 
-  const {
+export const useFormValidation = (schema: typeof ContactSchema) => {
+  const { 
     register, 
-    handleSubmit,
+    handleSubmit, 
     control,
     reset,
-    formState: { errors },
-  } = useForm<z.infer<typeof schema>>({ resolver: zodResolver(schema)});
+    formState: { errors } 
+  } = useForm<ContactSchemaType>({
+    resolver: zodResolver(schema),
+  });
 
-  return { register, handleSubmit, errors, reset, control };
+  return { 
+    register, 
+    handleSubmit, 
+    control,
+    reset,
+    errors
+  };
 };
