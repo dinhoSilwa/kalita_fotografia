@@ -27,7 +27,7 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
       <nav className="hidden md:block md:mt-14">
         <h2 className="mb-6 text-kalita-brown-dark font-semibold text-lg">Gerenciamento</h2>
 
-        <div className="flex flex-col gap-2 items-start">
+        <div className="flex flex-col gap-4 items-start">
           {sidebarLinks.map(({ href, label, icon }) => (
             <Link key={label} href={href} className="inline-flex items-center gap-3 text-base font-normal">
               {icon}
@@ -42,7 +42,7 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full">
       <aside
-        className='flex flex-col justify-between bg-white md:w-[25%] min-w-[260px] py-10'
+        className='flex flex-col justify-between bg-white md:w-[25%] min-w-[260px] py-10 h-[100px] md:h-screen'
       >
         <div className="px-8">
           <header className="flex justify-between items-center gap-1">
