@@ -47,10 +47,10 @@ export function MenuDashboardButton() {
 
       }
 
-      <div className="absolute left-0 top-[140px] w-full overflow-hidden z-50">
+      <div className="fixed inset-0 top-[100px] w-full z-[9999]">
         {open && (
           <div
-            className="w-full bg-kalita-bg-light p-8
+            className="w-full bg-white p-8
         transform transition-all duration-500 ease-out animate-slideDown 
         ">
 
