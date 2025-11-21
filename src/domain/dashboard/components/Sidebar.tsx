@@ -9,7 +9,7 @@ import { PiPackage } from "react-icons/pi";
 import { LuMessageSquareText } from "react-icons/lu";
 import { MdLogout } from "react-icons/md";
 
-import { CiMenuBurger } from "react-icons/ci";
+import { MenuDashboardButton } from "./MenuDashboardButton";
 
 
 const sidebarLinks = [
@@ -57,9 +57,9 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
               />
             </div>
 
-            <button className="md:hidden">
-              <CiMenuBurger size={24} />
-            </button>
+            <div className="md:hidden">
+              <MenuDashboardButton />
+            </div>
 
             <h1 className="text-kalita-brown-dark text-lg font-semibold">Área Administrativa</h1>
           </header>
