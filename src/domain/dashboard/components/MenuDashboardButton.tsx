@@ -1,6 +1,7 @@
 'use client'
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { GrGallery } from "react-icons/gr";
@@ -26,41 +27,55 @@ export function MenuDashboardButton() {
 
   return (
     <>
-      {!open ? (
-        <button>
-          <Menu
-            width={24}
-            height={24}
-            className='text-kalita-brown-dark cursor-pointer'
-            onClick={handleMenuButtonClick}
-          />
-        </button>
-      ) : (
-        <button>
-          <X
-            width={24}
-            height={24}
-            className='text-kalita-brown-dark cursor-pointer'
-            onClick={handleMenuButtonClick}
-          />
-        </button>
-      )
+      <button>
+        <Menu
+          width={24}
+          height={24}
+          className='text-kalita-brown-dark cursor-pointer'
+          onClick={handleMenuButtonClick}
+        />
+      </button>
 
-      }
-
-      <div className="fixed inset-0 top-[100px] w-full z-[9999]">
+      <div className="absolute top-0 left-0 w-full z-[9999]">
         {open && (
           <div
-            className="w-full bg-white p-8
-        transform transition-all duration-500 ease-out animate-slideDown 
+            className="w-full h-screen bg-white
+        transform transition-all duration-500 ease-out animate-slideRight 
         ">
 
-            <nav className="flex flex-col items-center gap-6">
+            <header className="flex flex-col pt-11 pb-6 border-b border-gray-300 px-6">
+              <div className="flex justify-end">
+                <button>
+                  <X
+                    width={24}
+                    height={24}
+                    className='text-kalita-brown-dark'
+                    onClick={handleMenuButtonClick}
+                  />
+                </button>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <Image
+                  src='/kalita-logo.svg'
+                  alt='Logo da kalita'
+                  width={90}
+                  height={90}
+                  priority
+                />
+
+                <h1 className="text-kalita-brown-dark text-xl font-semibold">Área Administrativa</h1>
+              </div>
+            </header>
+
+            <nav className="pt-[74px] px-6 flex flex-col gap-8">
+              <h2 className="text-kalita-brown-dark font-semibold text-lg">Gerenciamento</h2>
+
               {navLinks.map(item => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-kalita-brown-dark text-md flex items-center gap-2"
+                  className="text-kalita-brown-dark text-base flex items-center gap-2"
                   onClick={() => setOpen(false)}
                 >
                   {item.icon}
