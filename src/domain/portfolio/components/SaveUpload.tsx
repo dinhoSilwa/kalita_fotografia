@@ -2,9 +2,20 @@
 import { Loader, Save } from "lucide-react";
 import { useGallery } from "../hooks/useGalleryProvider";
 import { useUploadMultiples } from "../hooks/useUploadMultiples";
+import { useEffect } from "react";
 
 export const SaveUpload = () => {
-  const { mutate, isPending } = useUploadMultiples();
+
+
+  
+  const { mutate, isPending, isSuccess, isError} = useUploadMultiples();
+
+    useEffect(() =>{
+        if(isSuccess){
+    alert('Sucesso ao Enviar')
+  }
+  }, [ isSuccess])
+
 
   const { images } = useGallery();
   if (!images || images.length === 0) return null;
@@ -21,6 +32,9 @@ export const SaveUpload = () => {
   
   mutate(newFormData as any);
 };
+
+
+
   return (
     <button
       type="button"

@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { ButtonCTA } from './ButtonCTA'
 import { MenuButton } from './menuButton'
+import Link from 'next/link'
 
 
 export function Header() {
@@ -16,6 +16,7 @@ export function Header() {
   return (
     <header className='flex items-center justify-between px-6 py-4 bg-kalita-background-medium w-full h-[140px] z-10 '>
       <div className='flex items-center gap-7'>
+        <Link href={'dashboard/portfolio'}>
         <Image
           src='/kalita-logo.svg'
           alt='Logo da kalita'
@@ -23,6 +24,7 @@ export function Header() {
           height={120}
           priority
         />
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map(item => (

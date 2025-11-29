@@ -56,6 +56,7 @@ export default function ContactForm() {
     if(isSuccess){
        setIsModalOpen(false);
     reset();
+    window.location.href = "/"
     }
     return
    

@@ -4,10 +4,10 @@ import type { PortfolioUploadResponse, RequestPortfolio } from "../entities/port
 
 export const useUploadMultiples  = () =>{
   const portfolioMutation = usePortfolioService
-  const {isPending, isError, mutate} = useMutation({
+  const {isPending, isError, mutate, isSuccess} = useMutation({
       mutationFn : (data : RequestPortfolio) => 
         portfolioMutation.uploadMultiples(data)
   })
 
-  return {isPending, isError, mutate}
+  return {isPending, isError, mutate, isSuccess}
 }
