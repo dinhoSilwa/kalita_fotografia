@@ -4,22 +4,13 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { GrGallery } from "react-icons/gr";
-import { LuMessageSquareText } from "react-icons/lu";
+
 import { MdLogout } from "react-icons/md";
-import { PiHouseLight, PiPackage } from "react-icons/pi";
-import { RiGalleryView2 } from "react-icons/ri";
+import { sidebarLinks } from "./sidebar.contents";
+
 
 export function MenuDashboardButton() {
   const [open, setOpen] = useState(false);
-
-  const navLinks = [
-    { href: '/dashboard/painel', label: 'Painel', icon: <RiGalleryView2 /> },
-    { href: '/dashboard/gestao-portfolio', label: 'Gestão do Portfólio', icon: <GrGallery /> },
-    { href: '/dashboard/fotos', label: 'Fotos da Home', icon: <PiHouseLight /> },
-    { href: '/dashboard/gestao-pacotes', label: 'Gestão de Pacotes Sazonais', icon: <PiPackage /> },
-    { href: '/dashboard/controle-feedbacks', label: 'Controle de feedbacks', icon: <LuMessageSquareText /> },
-  ];
 
   function handleMenuButtonClick() {
     setOpen(!open);
@@ -71,7 +62,7 @@ export function MenuDashboardButton() {
             <nav className="pt-[74px] px-6 flex flex-col gap-8">
               <h2 className="text-kalita-brown-dark font-semibold text-lg">Gerenciamento</h2>
 
-              {navLinks.map(item => (
+              {sidebarLinks.map(item => (
                 <Link
                   key={item.href}
                   href={item.href}

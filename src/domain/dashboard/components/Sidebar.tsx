@@ -1,26 +1,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
-import { RiGalleryView2 } from "react-icons/ri";
-import { GrGallery } from "react-icons/gr";
-import { PiHouseLight } from "react-icons/pi";
-import { PiPackage } from "react-icons/pi";
-import { LuMessageSquareText } from "react-icons/lu";
 import { MdLogout } from "react-icons/md";
-
 import { MenuDashboardButton } from "./MenuDashboardButton";
+import { sidebarLinks } from "./sidebar.contents";
 
-
-const sidebarLinks = [
-  { href: '/dashboard/painel', label: 'Painel', icon: <RiGalleryView2 /> },
-  { href: '/dashboard/gestao-portfolio', label: 'Gestão do Portfólio', icon: <GrGallery /> },
-  { href: '/dashboard/fotos', label: 'Fotos da Home', icon: <PiHouseLight /> },
-  { href: '/dashboard/gestao-pacotes', label: 'Gestão de Pacotes Sazonais', icon: <PiPackage /> },
-  { href: '/dashboard/controle-feedbacks', label: 'Controle de feedbacks', icon: <LuMessageSquareText /> },
-];
-
-export function Sidebar({ children }: { children: React.ReactNode }) {
+export function  Sidebar({ children }: { children: React.ReactNode }) {
 
   function Navbar() {
     return (
