@@ -1,10 +1,11 @@
 'use client'
 
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { BsLayoutSidebar } from "react-icons/bs";
 import { MdLogout } from "react-icons/md";
 import { sidebarLinks } from "./sidebar.contents";
 
@@ -19,7 +20,7 @@ export function MenuDashboardButton() {
   return (
     <>
       <button>
-        <Menu
+        <BsLayoutSidebar
           width={24}
           height={24}
           className='text-kalita-brown-dark cursor-pointer'
@@ -30,7 +31,7 @@ export function MenuDashboardButton() {
       <div className="absolute top-0 left-0 w-full z-[9999]">
         {open && (
           <div
-            className="w-full h-screen bg-white flex flex-col 
+            className="w-full h-screen bg-white flex flex-col
         transform transition-all duration-500 ease-out animate-slideRight 
         ">
 
