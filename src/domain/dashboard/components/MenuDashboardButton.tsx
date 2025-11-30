@@ -11,7 +11,7 @@ import { sidebarLinks } from "./sidebar.contents";
 
 
 export function MenuDashboardButton() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   function handleMenuButtonClick() {
     setOpen(!open);
