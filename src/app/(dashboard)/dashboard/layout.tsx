@@ -15,12 +15,12 @@ export default function DashboardLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <Providers>
-              <body className="flex">
-        <Sidebar />
-          <div className="w-full bg-kalita-portfolio">
+        <body className="md:flex">
+          <Sidebar />
+          <div className="w-full min-h-[calc(100vh-100px)] bg-kalita-portfolio">
             {children}
           </div>
-      </body>
+        </body>
       </Providers>
 
     </html>
