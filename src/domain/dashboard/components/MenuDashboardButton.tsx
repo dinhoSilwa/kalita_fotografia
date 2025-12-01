@@ -19,14 +19,16 @@ export function MenuDashboardButton() {
 
   return (
     <>
-      <button>
-        <BsLayoutSidebar
-          width={24}
-          height={24}
-          className='text-kalita-brown-dark cursor-pointer h-6 w-6'
-          onClick={handleMenuButtonClick}
-        />
-      </button>
+      {!open && (
+        <button>
+          <BsLayoutSidebar
+            width={24}
+            height={24}
+            className='text-kalita-brown-dark cursor-pointer h-6 w-6'
+            onClick={handleMenuButtonClick}
+          />
+        </button>
+      )}
 
       <div className="absolute top-0 left-0 w-full z-[9999]">
         {open && (
