@@ -1,4 +1,4 @@
-import type { AxiosInstance } from "axios";
+import type { AxiosInstance, AxiosResponse } from "axios";
 import type { IPortfolioRepository } from "../interfaces/portfolio-interface";
 import type { CloudinaryResponse, PhotoInDb, RequestPortfolio, SuccessPortfolioResponse } from "../entities/portfolio-entities";
 
@@ -20,7 +20,7 @@ export class PortfolioService implements IPortfolioRepository {
   }
 
   async getAllPortfolioPhotos():Promise<PhotoInDb[]>{
-    const response = await this.httpPortfolioIntance.get("/portfolio") as CloudinaryResponse
-    return response.data 
+    const response = await this.httpPortfolioIntance.get("/portfolio") as AxiosResponse<CloudinaryResponse>
+    return response.data.data
   }
 }
